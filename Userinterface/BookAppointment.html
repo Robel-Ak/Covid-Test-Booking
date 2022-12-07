@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment CMS</title>
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/f02d3eaf19.js" crossorigin="anonymous"></script>
+    <!-- custom css -->
+    <link rel="stylesheet" href="../css/popupstyle.css">
+</head>
+
+<body>
+
+
+    <!-- header -->
+    <header class="header bg-teal">
+        <nav class="navbar bg-teal">
+            <div class="container flex">
+                <a href="Homepage.html" class="navbar-brand">
+                    <i class="fa-solid fa-virus-covid"></i>
+                </a>
+                <button type="button" class="navbar-show-btn">
+                    <img src="../images/ham-menu-icon.png">
+                </button>
+
+                <div class="navbar-collapse bg-white">
+                    <button type="button" class="navbar-hide-btn">
+                        <img src="../images/close-icon.png">
+                    </button>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="./Homepage.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./BookAppointment.html" class="nav-link">Book Appointment</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a href="./Results.html" class="nav-link">Result</a>
+                        </li> -->
+                        <li class="nav-item">
+
+                            <a href="#" class="nav-link" id="logout">Logout</a>
+                        </li>
+                        <!-- <li class = "nav-item">
+                            <a href = "#" class = "nav-link">Book Appointment</a>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- end of header -->
+    <hr>
+    <main>
+        <!-- book appointemnt section -->
+        <section id="contact" class="contact py">
+            <div class="container grid">
+
+                <div class="contact-right text-teal text-center bg-white">
+                    <div class="contact-head">
+                        <h3 class="lead">Book Appointment</h3>
+                        <p class="text text-md">Covid Testing Appointment Scheduler</p>
+                    </div>
+                    <!-- <form> -->
+                    <div class="form-element">
+                        <label>Full Name</label>
+                        <input type="text" id="fullname" class="form-control" placeholder="Your Full name">
+                    </div>
+                    <div class="form-element">
+                        <label>Email</label>
+                        <input type="email" id="email" class="form-control" placeholder="Your email">
+                    </div>
+                    <div class="form-element">
+                        <label>Phone Number</label>
+                        <input type="text" id="phonenumber" class="form-control" placeholder="Your phonenumber">
+                    </div>
+                    <div class="form-element">
+                        <label>Date Of Birth</label>
+                        <input type="date" id="dob" class="form-control" placeholder="date">
+                    </div>
+                    <div class="form-element">
+                        <label>Gender</label>
+                        <select id="gender" name="position" class="form-control" aria-placeholder="Sex">
+                            <!-- <option value="None">None</option> -->
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+
+                    <div class="form-element">
+                        <label>Appointment Date</label>
+                        <input type="date" id="doa" class="form-control" placeholder="date">
+                    </div>
+                    <button type="submit" id="submit" class="btn btn-teal btn-submit">
+                        <i class="fas fa-arrow-right"></i> Submit
+                    </button>
+                    <!-- </form> -->
+                </div>
+            </div>
+        </section>
+        <!-- end of book section -->
+
+    </main>
+    <hr>
+    <!-- footer  -->
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <div class="footer-inner text-white py grid">
+                <div class="footer-item">
+                    <h3 class="footer-head">about us</h3>
+                    <div class="icon">
+                        <img src="../images/IMG_4009.JPG">
+                    </div>
+                    <p class="text text-md">Covid Management system, is built to help record a patients history as well
+                        as testing result posts.</p>
+                    <address>
+                        Mexico Square <br>
+                        Addis Ababa <br>
+                        Ethiopia
+                    </address>
+                </div>
+
+                <div class="footer-item">
+                    <h3 class="footer-head">tags</h3>
+                    <ul class="tags-list flex">
+                        <li>Regular</li>
+                        <li>emergency</li>
+                        <li>Serious </li>
+                    </ul>
+                </div>
+
+                <div class="footer-item">
+                    <h3 class="footer-head">Quick Links</h3>
+                    <ul>
+                        <li><a href="#" class="text-white">Our Services</a></li>
+                        <li><a href="#" class="text-white">Appointment Schedule</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-item">
+                    <h3 class="footer-head">make an appointment</h3>
+                    <p class="text text-md">Our Testing Centers are open from</p>
+                    <ul class="appointment-info">
+                        <li>8:00 AM - 12:30 PM</li>
+                        <li>1:30 PM - 05:00 PM</li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>CMS@gmail.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+251-900-00-00-00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <!-- end of footer  -->
+
+
+    <!-- custom js -->
+    <script src="../js/script.js"></script>
+
+</body>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+    import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        signOut
+    } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+  apiKey: "AIzaSyANnZ4mn47jAcdJaJogvhI60ZJTSMrtEZc",
+  authDomain: "eventbooking-ed4ac.firebaseapp.com",
+  projectId: "eventbooking-ed4ac",
+  storageBucket: "eventbooking-ed4ac.appspot.com",
+  messagingSenderId: "282736889882",
+  appId: "1:282736889882:web:a4508602fa779cbba581a3"
+};
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    import { getDatabase, ref, set, child, update, remove } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-database.js";
+    const db = getDatabase();
+    const auth = getAuth();
+
+    var email = document.getElementById('email')
+    var fullname = document.getElementById('fullname')
+    var gender = document.getElementById('gender')
+    var dob = document.getElementById('dob')
+    var doa = document.getElementById('doa')
+    var phonenumber = document.getElementById('phonenumber')
+
+    var submit = document.getElementById('submit')
+    var signup = document.getElementById('submit')
+
+    function writeUserData() {
+
+        set(ref(db, 'Appointment/' + fullname.value), {
+            email: email.value,
+            fullname: fullname.value,
+            gender: gender.value,
+            dob: dob.value,
+            AppointmentDate: doa.value,
+            phonenumber: phonenumber.value
+        })
+            .then(() => {
+                // Data saved successfully!
+                alert("Appointment Scheduled")
+            })
+            .catch((error) => {
+                // The write failed...
+                alert("Error" + error);
+            });
+
+    }
+    signup.addEventListener('click', writeUserData);
+
+    logout.addEventListener('click', (e) => {
+
+        var userselection = confirm("Are you sure you want to Logout ?");
+
+        if (userselection == true) {
+
+            signOut(auth).then(() => {
+                // Sign-out successful.
+                alert('logged out of The System Successfully');
+                window.location.replace("./SignIn.html")
+
+            }).catch((error) => {
+                // An error happened.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+
+                alert(errorMessage);
+            });
+
+        }
+
+        else {
+
+            alert("Thank you, Please continue");
+
+        }
+
+
+    });
+</script>
+
+</html>

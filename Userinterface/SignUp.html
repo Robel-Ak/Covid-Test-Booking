@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In and up</title>
+  <!----======== CSS ======== -->
+  <link rel="stylesheet" href="../css/signin_up.css">
+
+  <!----===== FontAwesome Icons ===== -->
+  <script src="https://kit.fontawesome.com/f02d3eaf19.js" crossorigin="anonymous"></script>
+  <script src="../js/ValidationForm.js"></script>
+</head>
+
+<body>
+
+
+  <div class="container">
+    <div class="forms-container">
+      <div class="signin-signup">
+        <form action="#" method="post" class="sign-in-form">
+          <h2 class="title">Sign up</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Full Name" name="username" id="username" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Email" id="email" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-phone"></i>
+            <input type="text" placeholder="PhoneNumber" id="phonenumber" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" id="password" />
+          </div>
+          <button type="button" id="signup" class="btn" name="signup">Sign Up</button>
+        </form>
+
+      </div>
+    </div>
+
+
+    <div class="panels-container">
+      <div class="panel left-panel">
+        <div class="content">
+          <h3>have You Joined our family?</h3>
+          <p>
+            If you havent please feel free to join as we are dedicated to help our family live a covid free life
+            with clean bill of health.
+          </p>
+          <a type="button" class="btn " href="./SignIn.html" id="sign-up-btn">
+            Sign in
+          </a><br>
+          <a type="button" href="index.html" class="btn" id="sign-up-btn">
+            Go Back
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    import {
+      getAuth,
+      createUserWithEmailAndPassword,
+      signInWithEmailAndPassword,
+      signOut
+    } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js";
+    import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-database.js";
+
+    // Your web app's Firebase configuration
+
+
+    const firebaseConfig = {
+  apiKey: "AIzaSyANnZ4mn47jAcdJaJogvhI60ZJTSMrtEZc",
+  authDomain: "eventbooking-ed4ac.firebaseapp.com",
+  projectId: "eventbooking-ed4ac",
+  storageBucket: "eventbooking-ed4ac.appspot.com",
+  messagingSenderId: "282736889882",
+  appId: "1:282736889882:web:a4508602fa779cbba581a3"
+};
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+    const database = getDatabase(app);
+
+    signup.addEventListener('click', (e) => {
+
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      var username = document.getElementById('username').value
+      var phonenumber = document.getElementById('phonenumber').value
+      //sign up user
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          // ... user.uid
+          set(ref(database, 'users/' + phonenumber), {
+            email: email,
+            username: username,
+            phonenumber: phonenumber
+          })
+            .then(() => {
+              // Data saved successfully!
+              alert('user created successfully');
+
+            })
+            .catch((error) => {
+              // The write failed...
+              alert(error);
+            });
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          // ..
+          alert(errorMessage);
+        });
+
+
+    });
+
+  </script>
+
+</body>
+
+</html>
